@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DailyCost</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_add">AddActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
+</resources>
