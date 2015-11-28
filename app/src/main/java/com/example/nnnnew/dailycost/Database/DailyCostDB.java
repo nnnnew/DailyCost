@@ -21,6 +21,7 @@ public class DailyCostDB extends SQLiteOpenHelper {
     public static final String COL_AMOUNT = "amount";
     public static final String COL_CATALOGUE = "catalogue";
     public static final String COL_NOTE = "note";
+    public static final String COL_IC_ID = "iconid";
 
 
 
@@ -39,8 +40,9 @@ public class DailyCostDB extends SQLiteOpenHelper {
                                 "%s TEXT," +
                                 "%s TEXT," +
                                 "%s TEXT," +
+                                "%s TEXT," +
                                 "%s TEXT)";
-        sqlCreateTable = String.format(sqlCreateTable, TABLE_NAME, COL_ID, COL_TYPE, COL_DAY, COL_MONTH, COL_YEAR, COL_AMOUNT, COL_CATALOGUE, COL_NOTE);
+        sqlCreateTable = String.format(sqlCreateTable, TABLE_NAME, COL_ID, COL_TYPE, COL_DAY, COL_MONTH, COL_YEAR, COL_AMOUNT, COL_CATALOGUE, COL_NOTE, COL_IC_ID);
 
         db.execSQL(sqlCreateTable);
     }

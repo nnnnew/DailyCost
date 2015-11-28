@@ -5,8 +5,11 @@ package com.example.nnnnew.dailycost.Model;
  */
 public class ExpenseModel {
 
-    String[] type = {"Breakfast", "Lunch", "Dinner", "Snack", "Shopping", "Movie", "Music", "Game", "Bill", "Visa", "Other"};
+    String[] catalogue = {"Breakfast", "Lunch", "Dinner", "Snack", "Shopping", "Movie", "Music", "Game", "Bill", "Visa", "Other"};
 
-    String[] idIcon = {"on_add_breakfast", "on_add_lunch", "on_add_dinner", "on_add_snack", "on_shopping",
+    String[] idOnAdd = {"on_add_breakfast", "on_add_lunch", "on_add_dinner", "on_add_snack", "on_shopping",
             "on_add_movie", "on_add_music", "on_add_game", "on_add_bill", "on_add_visa", "on_add_other"};
+
+    String[] idIcon = {"ic_breakfast", "ic_lunch", "ic_dinner", "ic_snack", "ic_shopping", "ic_movie", "ic_music",
+            "ic_game", "ic_bill", "ic_visa", "ic_other"};
 }
