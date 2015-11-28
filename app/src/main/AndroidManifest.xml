@@ -29,7 +29,8 @@
             android:label="@string/title_activity_setting"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SummaryActivity" />
-        <activity android:name=".ExpenseCatalogueActivity"></activity>
+        <activity android:name=".ExpenseCatalogueActivity" />
+        <activity android:name=".IncomeCatalogueActivity"></activity>
     </application>
 
 </manifest>

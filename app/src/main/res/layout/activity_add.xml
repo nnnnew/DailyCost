@@ -73,14 +73,134 @@
 
     </LinearLayout>
 
-    <FrameLayout
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:id="@+id/linearAmount"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout"
         android:layout_centerHorizontal="true"
-        android:id="@+id/fragment_add">
+        android:background="#f85858">
 
-    </FrameLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Amount"
+                android:id="@+id/amount_textView"
+                android:textSize="35dp"
+                android:textColor="#fff"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/amount_editText"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:onClick="true"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/linearAmount"
+        android:background="#fff"
+        android:id="@+id/linearLayout5">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:src="@drawable/ic_catalog"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:id="@+id/imageView5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Catalogue"
+                android:id="@+id/catalogue_textView"
+                android:textColor="#000"
+                android:gravity="center_vertical|right" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Select catalogue"
+                android:id="@+id/selected_catalogue_textView"
+                android:gravity="center_vertical|right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearLayout5"
+        android:layout_centerHorizontal="true"
+        android:background="#fff">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:src="@drawable/ic_note"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:id="@+id/note_imageview" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Description"
+                android:id="@+id/description_textview"
+                android:gravity="center_vertical|right" />
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/description_editText"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
 
 
 </RelativeLayout>
