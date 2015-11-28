@@ -63,6 +63,15 @@ public class AddActivity extends AppCompatActivity {
             }
         });
 
+
+        Button doneButton = (Button) findViewById(R.id.done_button);
+        doneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
+
     }
 
     private void loadExpenseFragment() {
@@ -82,5 +91,7 @@ public class AddActivity extends AppCompatActivity {
         ft.replace(R.id.fragment_add, addIncomeFragment);
         ft.commit();
     }
+
+
 
 }

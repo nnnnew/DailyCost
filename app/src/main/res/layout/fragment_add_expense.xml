@@ -47,12 +47,13 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/editText"
+                android:id="@+id/amount_editText"
                 android:textColor="#fff" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
+        android:clickable="true"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="7dp"
         android:padding="15dp"
