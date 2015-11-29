@@ -90,7 +90,7 @@ public class AddActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), ExpenseCatalogueActivity.class);
                     startActivityForResult(intent, 0);
                 }
-                else {
+                else if(statusTypeNow == "Income"){
                     Intent intent = new Intent(getApplicationContext(), IncomeCatalogueActivity.class);
                     startActivityForResult(intent, 1);
                 }

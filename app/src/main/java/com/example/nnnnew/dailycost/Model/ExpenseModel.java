@@ -1,15 +1,47 @@
 package com.example.nnnnew.dailycost.Model;
 
+import android.support.v7.app.AppCompatActivity;
+
 /**
  * Created by nnnnew on 11/29/2015 AD.
  */
-public class ExpenseModel {
+public class ExpenseModel extends AppCompatActivity {
 
-    String[] catalogue = {"Breakfast", "Lunch", "Dinner", "Snack", "Shopping", "Movie", "Music", "Game", "Bill", "Visa", "Other"};
+    private String m_catalogue;
+    private int m_on_add_id;
+    private int m_ic_id;
 
-    String[] idOnAdd = {"on_add_breakfast", "on_add_lunch", "on_add_dinner", "on_add_snack", "on_shopping",
-            "on_add_movie", "on_add_music", "on_add_game", "on_add_bill", "on_add_visa", "on_add_other"};
+    public ExpenseModel(String m_catalogue, int m_on_add_id) {
+        this.m_catalogue = m_catalogue;
+        this.m_on_add_id = m_on_add_id;
+    }
 
-    String[] idIcon = {"ic_breakfast", "ic_lunch", "ic_dinner", "ic_snack", "ic_shopping", "ic_movie", "ic_music",
-            "ic_game", "ic_bill", "ic_visa", "ic_other"};
+    public int getM_ic_id() {
+        return m_ic_id;
+    }
+
+    public void setM_ic_id(int m_ic_id) {
+        this.m_ic_id = m_ic_id;
+    }
+
+    public int getM_on_add_id() {
+
+        return m_on_add_id;
+    }
+
+    public void setM_on_add_id(int m_on_add_id) {
+        this.m_on_add_id = m_on_add_id;
+    }
+
+    public String getM_catalogue() {
+
+        return m_catalogue;
+    }
+
+    public void setM_catalogue(String m_catalogue) {
+        this.m_catalogue = m_catalogue;
+    }
+
+
+
 }
