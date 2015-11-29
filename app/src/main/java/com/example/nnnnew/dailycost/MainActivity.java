@@ -3,6 +3,7 @@ package com.example.nnnnew.dailycost;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.Time;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private int monthNumber;
     private int years;
 
+    private String statusMain;
+
     String[] str = {"January",
             "February",
             "March",
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setCurrentDate();
 
+        statusMain = "Expense";
         Log.i("DateChekk", years + "/" + month + "/" + day);
 
         dbDaily = new DailyCostDB(getApplicationContext());
@@ -98,6 +102,36 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }, years, monthNumber, day);
                 datePickerDialog.show();
+            }
+        });
+
+        final int nonClickColor = Color.argb(255, 255, 255, 255);
+        final int onClickColor = Color.argb(213, 213, 213, 213);
+        final int expenseClickColorBackground = Color.argb(255, 248, 88, 88);
+        final int incomeClickColorBackground = Color.argb(255, 61, 228, 153);
+        final LinearLayout expenseButton = (LinearLayout) findViewById(R.id.expense_button);
+        final LinearLayout incomeButton = (LinearLayout) findViewById(R.id.income_button);
+        final LinearLayout backgroundLayout = (LinearLayout) findViewById(R.id.background_main);
+        expenseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                statusMain = "Expense";
+
+                backgroundLayout.setBackgroundColor(expenseClickColorBackground);
+                expenseButton.setBackgroundColor(onClickColor);
+                incomeButton.setBackgroundColor(nonClickColor);
+
+            }
+        });
+
+        incomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                statusMain = "Income";
+
+                backgroundLayout.setBackgroundColor(incomeClickColorBackground);
+                expenseButton.setBackgroundColor(nonClickColor);
+                incomeButton.setBackgroundColor(onClickColor);
             }
         });
 
