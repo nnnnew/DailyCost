@@ -34,7 +34,7 @@ public class IncomeCatalogueActivity extends ListActivity {
         Intent intent = new Intent();
         intent.putExtra("catalogue", catalogue[position]);
         intent.putExtra("idOnAdd", idOnAdd[position]);
-        intent.putExtra("idIcone", idIcon[position]);
+        intent.putExtra("idIcon", idIcon[position]);
         setResult(RESULT_OK, intent);
         finish();
     }
