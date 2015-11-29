@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class AddActivity extends AppCompatActivity {
@@ -14,6 +16,7 @@ public class AddActivity extends AppCompatActivity {
     private String statusTypeNow = "Expense";
     private String selectedCatalog = "";
     private String note = "";
+    private int idIcon = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,8 @@ public class AddActivity extends AppCompatActivity {
 
                 statusTypeNow = "Expense";
 
+                resetDefult();
+
 
             }
         });
@@ -68,6 +73,8 @@ public class AddActivity extends AppCompatActivity {
                 linearAmount.setBackgroundColor(colorClick);
 
                 statusTypeNow = "Income";
+
+                resetDefult();
 
             }
         });
@@ -104,13 +111,37 @@ public class AddActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == 0) {
-            selectedCatalog = data.getStringExtra("catalogue");
-            note = data.getStringExtra("note");
+            String catalogue = data.getStringExtra("catalogue");
+            int idOnAdd = data.getIntExtra("idOnAdd", 0);
+            int tmpIdIcon = data.getIntExtra("idIcon", 0);
+            idIcon = tmpIdIcon;
+
+            TextView selectedCatalogue = (TextView) findViewById(R.id.selected_catalogue_textView);
+            selectedCatalogue.setText(catalogue);
+
+            ImageView onSelectedImageView = (ImageView) findViewById(R.id.catalogue_imageView);
+            onSelectedImageView.setImageResource(idOnAdd);
         }
         else {
-            selectedCatalog = data.getStringExtra("catalogue");
-            note = data.getStringExtra("note");
+            String catalogue = data.getStringExtra("catalogue");
+            int idOnAdd = data.getIntExtra("idOnAdd", 0);
+            int tmpIdIcon = data.getIntExtra("idIcon", 0);
+            idIcon = tmpIdIcon;
+
+            TextView selectedCatalogue = (TextView) findViewById(R.id.selected_catalogue_textView);
+            selectedCatalogue.setText(catalogue);
+
+            ImageView onSelectedImageView = (ImageView) findViewById(R.id.catalogue_imageView);
+            onSelectedImageView.setImageResource(idOnAdd);
         }
 
+    }
+
+    private void resetDefult() {
+        TextView selectedCatalogue = (TextView) findViewById(R.id.selected_catalogue_textView);
+        selectedCatalogue.setText("Select catalogue");
+
+        ImageView onSelectedImageView = (ImageView) findViewById(R.id.catalogue_imageView);
+        onSelectedImageView.setImageResource(R.drawable.ic_catalog);
     }
 }

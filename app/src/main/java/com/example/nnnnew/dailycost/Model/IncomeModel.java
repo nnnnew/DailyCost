@@ -1,9 +1,11 @@
 package com.example.nnnnew.dailycost.Model;
 
+import android.support.v7.app.AppCompatActivity;
+
 /**
  * Created by nnnnew on 11/29/2015 AD.
  */
-public class IncomeModel {
+public class IncomeModel extends AppCompatActivity{
 
     private String m_catalogue;
     private int m_on_add_id;

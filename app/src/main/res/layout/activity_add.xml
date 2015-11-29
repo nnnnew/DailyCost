@@ -135,7 +135,7 @@
                 android:src="@drawable/ic_catalog"
                 android:layout_width="40dp"
                 android:layout_height="50dp"
-                android:id="@+id/imageView5" />
+                android:id="@+id/catalogue_imageView" />
 
             <TextView
                 android:layout_width="match_parent"
