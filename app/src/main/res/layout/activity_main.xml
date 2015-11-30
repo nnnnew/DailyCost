@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.nnnnew.dailycost.MainActivity">
+    tools:context="com.example.nnnnew.dailycost.MainActivity"
+    android:background="#d5d5d5">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -229,6 +230,12 @@
                 android:textColor="#fff"
                 android:textStyle="bold" />
         </LinearLayout>
+
+        <ListView
+            android:layout_width="277dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView"
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 

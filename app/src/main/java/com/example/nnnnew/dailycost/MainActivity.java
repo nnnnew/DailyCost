@@ -137,6 +137,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+
     private void setDateText() {
         Time today = new Time(Time.getCurrentTimezone());
         today.setToNow();

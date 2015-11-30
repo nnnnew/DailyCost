@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <LinearLayout
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#b1b1b1">
+
+        <ImageView
+            android:src="@drawable/ic_breakfast"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:id="@+id/list_ic" />
+
+        <TextView
+            android:paddingLeft="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Breakfast"
+            android:id="@+id/list_catalogues"
+            android:gravity="center_vertical"
+            android:textColor="#fff"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="0"
+            android:id="@+id/list_amount"
+            android:textColor="#fff"
+            android:textSize="23dp"
+            android:gravity="center_vertical|right" />
+
+    </LinearLayout>
+</LinearLayout>
