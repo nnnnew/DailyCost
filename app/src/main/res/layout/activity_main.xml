@@ -232,9 +232,9 @@
         </LinearLayout>
 
         <ListView
-            android:layout_width="277dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/list_data_view"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>

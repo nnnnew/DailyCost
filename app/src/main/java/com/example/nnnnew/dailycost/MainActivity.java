@@ -2,6 +2,7 @@ package com.example.nnnnew.dailycost;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 import com.example.nnnnew.dailycost.Database.DailyCostDB;
@@ -27,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private int years;
 
     private String statusMain;
+    private ListView list;
+    SimpleCursorAdapter adapter;
 
     String[] str = {"January",
             "February",
@@ -48,10 +53,11 @@ public class MainActivity extends AppCompatActivity {
         setCurrentDate();
 
         statusMain = "Expense";
-        Log.i("DateChekk", years + "/" + month + "/" + day);
 
         dbDaily = new DailyCostDB(getApplicationContext());
         db = dbDaily.getWritableDatabase();
+
+        list = (ListView) findViewById(R.id.list_data_view);
 
         Button addButton = (Button) findViewById(R.id.add_button);
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -121,6 +127,8 @@ public class MainActivity extends AppCompatActivity {
                 expenseButton.setBackgroundColor(onClickColor);
                 incomeButton.setBackgroundColor(nonClickColor);
 
+                onResume();
+
             }
         });
 
@@ -132,6 +140,8 @@ public class MainActivity extends AppCompatActivity {
                 backgroundLayout.setBackgroundColor(incomeClickColorBackground);
                 expenseButton.setBackgroundColor(nonClickColor);
                 incomeButton.setBackgroundColor(onClickColor);
+
+                onResume();
             }
         });
 
@@ -165,4 +175,39 @@ public class MainActivity extends AppCompatActivity {
         month = str[monthNumber];
     }
 
+
+    private Cursor getData() {
+        String selectQuery = "SELECT " +
+                DailyCostDB.COL_ID + "," +
+                DailyCostDB.COL_CATALOGUE + "," +
+                DailyCostDB.COL_AMOUNT + "," +
+                DailyCostDB.COL_IC_ID  +
+                " FROM " + DailyCostDB.TABLE_NAME +
+                " WHERE " +
+                DailyCostDB.COL_DAY + " LIKE '" + day + "'" +
+                " AND " +
+                DailyCostDB.COL_MONTH + " LIKE '" + month + "'" +
+                " AND " +
+                DailyCostDB.COL_YEAR + " LIKE '" + years + "'" +
+                " AND " +
+                DailyCostDB.COL_TYPE + " LIKE '" + statusMain + "'";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        return cursor;
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Cursor cursor = getData();
+        adapter = new SimpleCursorAdapter(
+                this,
+                R.layout.list_maint_item,
+                cursor,
+                new String[] {DailyCostDB.COL_IC_ID, DailyCostDB.COL_CATALOGUE, DailyCostDB.COL_AMOUNT},
+                new int[] {R.id.list_ic, R.id.list_catalogues, R.id.list_amount}
+        );
+        list.setAdapter(adapter);
+
+    }
 }
