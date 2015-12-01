@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private int monthNumber;
     private int years;
 
+    private TextView totalAmoutTextView;
+
     private String statusMain;
     private ListView list;
     SimpleCursorAdapter adapter;
@@ -57,8 +59,9 @@ public class MainActivity extends AppCompatActivity {
         dbDaily = new DailyCostDB(getApplicationContext());
         db = dbDaily.getWritableDatabase();
 
-        list = (ListView) findViewById(R.id.list_data_view);
 
+        totalAmoutTextView = (TextView) findViewById(R.id.total_amount);
+        list = (ListView) findViewById(R.id.list_data_view);
         Button addButton = (Button) findViewById(R.id.add_button);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,6 +211,21 @@ public class MainActivity extends AppCompatActivity {
                 new int[] {R.id.list_ic, R.id.list_catalogues, R.id.list_amount}
         );
         list.setAdapter(adapter);
-
+        if(cursor.moveToFirst()) {
+            getAllAmount(cursor);
+        }
+        else {
+            totalAmoutTextView.setText("0");
+        }
     }
+
+    private void getAllAmount(Cursor cursor) {
+        int sum = 0;
+            cursor.moveToFirst();
+            do {
+                sum += Integer.parseInt(cursor.getString(cursor.getColumnIndex(DailyCostDB.COL_AMOUNT)));
+            } while (cursor.moveToNext());
+        totalAmoutTextView.setText(String.valueOf(sum));
+    }
+
 }
