@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/detail_backgroud"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nnnnew.dailycost.DetailActivity"
+    android:background="#f85858">
+
+
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:background="#3c3c3c"
+        android:id="@+id/linearLayout7">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:background="@drawable/back_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text=""
+                android:id="@+id/back_button3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="288dp"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Detail"
+                android:id="@+id/detail_textview"
+                android:textColor="#fff"
+                android:gravity="center_vertical|center_horizontal"
+                android:textStyle="bold"
+                android:layout_weight="0.23" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout7"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout8">
+
+        <ImageView
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_salary"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/imageView8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Amount"
+            android:id="@+id/textView6"
+            android:gravity="center_vertical"
+            android:textColor="#fff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="0"
+            android:id="@+id/detail_amount_textView"
+            android:gravity="center_vertical|right"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout8"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout9">
+
+        <ImageView
+            android:layout_marginRight="7dp"
+            android:background="@drawable/notes26"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:id="@+id/imageView9" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Catalogue"
+            android:textColor="#fff"
+            android:id="@+id/textView8"
+            android:gravity="center_vertical" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Catalogue"
+            android:textColor="#fff"
+            android:id="@+id/catalogue_detail_textview"
+            android:gravity="center_vertical|right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout9"
+        android:layout_centerHorizontal="true"
+        android:weightSum="1"
+        android:id="@+id/linearLayout10">
+
+        <LinearLayout
+            android:padding="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:layout_marginRight="7dp"
+                android:src="@drawable/pamphlet"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/imageView10" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Description"
+                android:id="@+id/textView12"
+                android:gravity="center_vertical"
+                android:textColor="#fff" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginBottom="15dp"
+            android:layout_width="287dp"
+            android:layout_height="145dp"
+            android:id="@+id/note_textView"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/linearLayout10"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="#fdffefc0">
+
+        <Button
+            android:background="#3c3c3c"
+            android:textColor="#fff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DELETE"
+            android:id="@+id/delete_button" />
+    </LinearLayout>
+
+</RelativeLayout>

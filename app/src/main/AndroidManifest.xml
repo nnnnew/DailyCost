@@ -30,7 +30,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SummaryActivity" />
         <activity android:name=".ExpenseCatalogueActivity" />
-        <activity android:name=".IncomeCatalogueActivity"></activity>
+        <activity android:name=".IncomeCatalogueActivity" />
+        <activity android:name=".DetailActivity"></activity>
     </application>
 
 </manifest>

@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="DATE VIEW"
-            android:id="@+id/date_textView"
+            android:id="@+id/date_textView2"
             android:textSize="25dp"
             android:textStyle="bold"
             android:textColor="#494241"
@@ -90,6 +90,8 @@
 
 
         <LinearLayout
+            android:onClick="true"
+            android:id="@+id/linear_day"
             android:padding="10dp"
             android:layout_weight="1"
             android:orientation="horizontal"
@@ -102,12 +104,14 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Day"
-                android:id="@+id/textView6"
+                android:id="@+id/textday"
                 android:gravity="center_horizontal"
                 android:textColor="#fff3db" />
         </LinearLayout>
 
         <LinearLayout
+            android:onClick="true"
+            android:id="@+id/linear_month"
             android:padding="10dp"
             android:layout_weight="1"
             android:orientation="horizontal"
@@ -119,11 +123,13 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Month"
-                android:id="@+id/textView7"
+                android:id="@+id/textmonth"
                 android:gravity="center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
+            android:onClick="true"
+            android:id="@+id/linear_year"
             android:padding="10dp"
             android:layout_weight="1"
             android:orientation="horizontal"
@@ -135,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Year"
-                android:id="@+id/textView8"
+                android:id="@+id/textyear"
                 android:gravity="center_horizontal" />
         </LinearLayout>
     </LinearLayout>

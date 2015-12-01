@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.LinearLayout;
@@ -88,6 +89,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SummaryActivity.class);
+                intent.putExtra("year", years);
+                intent.putExtra("day", day);
+                intent.putExtra("month", month);
+                intent.putExtra("monthNumber", monthNumber);
                 startActivity(intent);
             }
         });
@@ -107,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
                                 day = dayOfMonth;
                                 month = str[monthOfYear];
                                 setDateText();
+                                onResume();
 
                             }
                         }, years, monthNumber, day);
@@ -148,6 +154,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                intent.putExtra("_id", id);
+                intent.putExtra("type", statusMain);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
@@ -176,6 +192,7 @@ public class MainActivity extends AppCompatActivity {
         monthNumber = today.month;
         day = today.monthDay;
         month = str[monthNumber];
+        Log.i("CurrentDate", years + " / " + month + " / " + day);
     }
 
 
