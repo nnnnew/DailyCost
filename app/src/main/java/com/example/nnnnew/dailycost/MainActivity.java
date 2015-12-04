@@ -120,10 +120,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         final int nonClickColor = Color.argb(255, 255, 255, 255);
         final int onClickColor = Color.argb(213, 213, 213, 213);
-        final int expenseClickColorBackground = Color.argb(255, 248, 88, 88);
-        final int incomeClickColorBackground = Color.argb(255, 61, 228, 153);
         final LinearLayout expenseButton = (LinearLayout) findViewById(R.id.expense_button);
         final LinearLayout incomeButton = (LinearLayout) findViewById(R.id.income_button);
         final LinearLayout backgroundLayout = (LinearLayout) findViewById(R.id.background_main);
@@ -132,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 statusMain = "Expense";
 
-                backgroundLayout.setBackgroundColor(expenseClickColorBackground);
+                backgroundLayout.setBackgroundColor(Color.parseColor("#f45b3d"));
                 expenseButton.setBackgroundColor(onClickColor);
                 incomeButton.setBackgroundColor(nonClickColor);
 
@@ -146,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 statusMain = "Income";
 
-                backgroundLayout.setBackgroundColor(incomeClickColorBackground);
+                backgroundLayout.setBackgroundColor(Color.parseColor("#97cf2e"));
                 expenseButton.setBackgroundColor(nonClickColor);
                 incomeButton.setBackgroundColor(onClickColor);
 

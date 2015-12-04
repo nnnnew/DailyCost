@@ -200,7 +200,7 @@
         android:layout_below="@+id/linearLayout3"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/linearLayout2"
-        android:background="#f85858">
+        android:background="#f45b3d">
 
         <LinearLayout
             android:padding="5dp"

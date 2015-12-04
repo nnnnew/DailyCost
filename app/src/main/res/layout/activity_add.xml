@@ -42,7 +42,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#db5d56"
+                android:background="#f45b3d"
                 android:text="EXPENSE"
                 android:textColor="#fff"
                 android:onClick="SelectOnExpense"
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout"
         android:layout_centerHorizontal="true"
-        android:background="#f85858">
+        android:background="#f45b3d">
 
         <LinearLayout
             android:orientation="horizontal"
